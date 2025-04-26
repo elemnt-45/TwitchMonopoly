@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'monopoly/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="login-container" class="card">
+    <div class="card-blur-container">
+        <div class="card-blur"></div>
+    </div>
+    <div class="card-content-container">
+        <form id="form-container" class="center" method="POST">
+            {% csrf_token %}
+            <span id="login-title">{{active_page}}</span>
+            {% if error %}
+                <span id="login-error" class="card"> {{error}} </span>
+            {% endif %}
+            {% if active_page == "Регистрация" %}
+            <div id="login-name-group">
+                <input name="firstname" id="login-first-name" placeholder="Имя"/>
+                <input name="lastname" id="login-last-name" placeholder="Фамилия"/>
+            </div>
+            <input name="email" type="email" id="login-email" placeholder="Email"/>
+            {% endif %}
+            <input name="username" id="login-user-name" placeholder="Никнейм"/>
+            <input name="password" type="password" id="login-password" placeholder="Пароль"/>
+            <button type="submit" id="login-submit" class="large-button">{{active_page}}</button>
+        </form>
+        <span id="login-switch" class="card">
+            {% if active_page == "Регистрация" %}
+           Уже зарегистрированы? &nbsp;
+            <a href="/login">Войти</a>
+            {% else %}
+            Ещё не зарегистрированы? &nbsp;
+            <a href="/signup">Создать новый аккаунт</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}

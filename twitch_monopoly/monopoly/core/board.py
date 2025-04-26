@@ -1,0 +1,50 @@
+from .land import *
+
+
+class Board(object):
+
+    def __init__(self):
+        self._lands = []
+        self.init_lands()
+
+    def init_lands(self):
+        self._lands.append(StartLand())
+        self._lands.append(Land(0, 0))
+        self._lands.append(ChanceLand())
+        self._lands.append(Land(0, 1))
+        self._lands.append(MoneyLand())
+        self._lands.append(CarLand())
+        self._lands.append(Land(1, 0))
+        self._lands.append(ChanceLand())
+        self._lands.append(Land(1, 1))
+        self._lands.append(Land(1, 2))
+        self._lands.append(JailLand())
+        self._lands.append(Land(2, 0))
+        self._lands.append(MoneyLand())
+        self._lands.append(Land(2, 1))
+        self._lands.append(Land(2, 2))
+        self._lands.append(CarLand())
+        self._lands.append(Land(3, 0))
+        self._lands.append(ChanceLand())
+        self._lands.append(Land(3, 1))
+        self._lands.append(Land(3, 2))
+        self._lands.append(ParkLand())
+        self._lands.append(Land(4, 0))
+        self._lands.append(ChanceLand())
+        self._lands.append(Land(4, 1))
+        self._lands.append(Land(4, 2))
+        self._lands.append(CarLand())
+        self._lands.append(Land(5, 0))
+        self._lands.append(Land(5, 1))
+        self._lands.append(MoneyLand())
+        self._lands.append(Land(5, 2))
+        self._lands.append(JailLand())
+        self._lands.append(Land(6, 0))
+        self._lands.append(Land(6, 1))
+        self._lands.append(ChanceLand())
+        self._lands.append(Land(6, 2))
+        self._lands.append(CarLand())
+        self._lands.append(ChanceLand())
+        self._lands.append(Land(7, 0))
+        self._lands.append(MoneyLand())
+        self._lands.append(Land(7, 1))
